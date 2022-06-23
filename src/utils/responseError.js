@@ -1,4 +1,4 @@
-const responseError = (h, error, ClientError) => {
+const responseError = (error, h, ClientError) => {
   if (error instanceof ClientError) {
     const response = h.response({
       status: 'fail',
@@ -15,3 +15,5 @@ const responseError = (h, error, ClientError) => {
   console.error(error);
   return response;
 };
+
+module.exports = responseError;
